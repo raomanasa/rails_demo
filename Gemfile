@@ -13,12 +13,13 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'coveralls', require:false
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
-end
+  end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
