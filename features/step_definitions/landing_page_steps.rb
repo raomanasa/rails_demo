@@ -1,31 +1,21 @@
-  When('I am on the index page') do
+Given("I am on the index page") do
     visit root_path
-  end
-  
-  Then("I should see {string}") do |content|
-    expect(page).to have_text content
-  end
+end
 
-  Given("the following articles exist:") do |table|
+Given("the following articles exist") do |table|
     table.hashes.each do |hash|
-      Article.create!(hash)
+        Article.create!(hash)
     end
-  end
-  
-  #Given("I click on {string}") do |string|
-   # pending # Write code here that turns the phrase above into concrete actions
- # end
+end
 
-  When("I fill in {string} with {string}") do |input, content|
-    fill_in input , with:content
-  end
-  
-  When("I click on {string}") do |element|
-  click_on element
-  end
-  
-  Then("I should be on the {string} page") do |string|
-   pending # Write code here that turns the phrase above into concrete actions
-  end
+When("I click {string}") do |element|
+    click_on element
+end
 
-  
+When("I fill in {string} with {string}") do |input, content|
+    fill_in input, with: content
+end
+
+Then("I should see {string}") do |content|
+  expect(page).to have_text content
+end
