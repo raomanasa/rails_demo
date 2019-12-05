@@ -1,12 +1,13 @@
  <p>A breaking news item</p>
 <p>Some breaking action</p>
 <%= link_to 'New Article' ,  new_article_path %>
-<h1> Welcome to the # new page <h1>
+<%=form_with model: @article %>
 <ul>
   <% @articles.each do |article| %>
     <li>
       <%= article.title %><br />
       <%= article.content %>
+  
     </li>
   <% end %>
 </ul>
