@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'landing/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 end
 Rails.application.routes.draw do
   get 'landing/index'
-  root controller: :landing, action: :index
+  root controller: :articles, action: :index
+  resources :articles , only: [:new, :create]
+
 end
