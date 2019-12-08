@@ -9,7 +9,7 @@ gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
-
+gem 'devise'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
@@ -19,7 +19,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
-  end
+end
 
 group :development do
   gem 'web-console', '>= 3.3.0'

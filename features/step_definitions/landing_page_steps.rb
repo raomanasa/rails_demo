@@ -24,3 +24,14 @@ Then("I should be on {string} page") do |article_title|
   article = Article.find_by(title: article_title)
   expect(current_path).to eq article_path(article)  
 end
+
+Given("the following users exits:") do |table|
+  table.hashes.each do |user_attr|
+    User.create!(user_attr)
+  end
+end
+
+Given("I am logged in as {string}") do |email|
+ user=User.find_by(email: email)
+ login_as(user, scope: :user)
+end
