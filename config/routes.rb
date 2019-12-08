@@ -1,8 +1,8 @@
-Rails.application.routes.draw do
-  get 'landing/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
-Rails.application.routes.draw do
-  get 'landing/index'
-  root controller: :landing, action: :index
+ Rails.application.routes.draw do
+  devise_for :users
+  devise_scope :user do  
+    get '/users/sign_out' => 'devise/sessions#destroy'     
+  end
+  root 'landing#index'
+  resources :articles, only: [:new, :create, :show]
 end
