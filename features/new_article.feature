@@ -19,4 +19,6 @@ Feature: User can create articles
         And I should see "Article was successfully created."
         And I should see "Learning Rails 6"
         And I should see "Excited about learning a new framework"
+ Scenario: Visitor cannot create article 
+        Then I should not see "New Article" 
 
